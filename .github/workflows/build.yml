@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "build/**"
+  pull_request:
   merge_group:
     types:
         - checks_requested
@@ -16,4 +17,4 @@ jobs:
     needs: [check]
     uses: ./.github/workflows/_build.yml
     with:
-      enabled: ${{ github.repository == 'brioche-dev/gh-actions-test' }}
+      enabled: ${{ github.repository == 'brioche-dev/gh-actions-test' && (github.event_name == 'push' || github.event_name == 'merge_group')}}
