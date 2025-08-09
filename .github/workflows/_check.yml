@@ -11,6 +11,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: List files
+        run: |
+          ls -l files/
+
       - name: Check packages
         run: |
           result_path=check.txt

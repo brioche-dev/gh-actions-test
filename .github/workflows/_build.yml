@@ -25,6 +25,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: List files
+        run: |
+          ls -l files/
+
       - name: Build packages
         run: |
           result_path=build/${PLATFORM}.txt
