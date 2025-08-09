@@ -55,7 +55,11 @@ jobs:
   # Extra job that succeeds when all build jobs succeed (useful for PR requirements)
   all-builds-passed:
     name: All builds passed
+    if: always()
     needs: [build]
     runs-on: ubuntu-24.04
     steps:
-      - run: ":"
+      - run: echo "$BUILD_RESULTS"
+        env:
+          BUILD_RESULTS: ${{ toJson(needs.build) }}
+      - run: "exit 1"
