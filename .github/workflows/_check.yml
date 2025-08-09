@@ -1,0 +1,19 @@
+name: "[Check]"
+
+on:
+  workflow_call:
+
+jobs:
+  check:
+    name: Check packages
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check packages
+        run: |
+          result_path=check.txt
+          result=$(cat "$result_path")
+          echo "$result_path: $result"
+          test "$result" = "success"
