@@ -17,12 +17,12 @@ jobs:
     needs: [check]
     uses: ./.github/workflows/_build.yml
     with:
-      enabled: ${{ github.repository == 'brioche-dev/brioche-packages' }}
+      enabled: ${{ github.repository == 'brioche-dev/gh-actions-test' }}
 
   publish:
     name: Publish packages
     needs: [build]
-    if: github.repository == 'brioche-dev/brioche-packages' && github.ref == 'refs/heads/main'
+    if: github.repository == 'brioche-dev/gh-actions-test' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
