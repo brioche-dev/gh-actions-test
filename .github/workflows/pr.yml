@@ -6,10 +6,3 @@ on:
 jobs:
   check:
     uses: ./.github/workflows/_check.yml
-
-  # Build "Live update" PRs (PRs from `live-update/` branches from this repo)
-  build:
-    needs: [check]
-    uses: ./.github/workflows/_build.yml
-    with:
-      enabled: ${{ github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.head_ref, 'live-update/') }}
