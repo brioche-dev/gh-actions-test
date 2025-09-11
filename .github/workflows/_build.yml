@@ -27,7 +27,7 @@ jobs:
 
       - name: List files
         run: |
-          ls -l files/
+          ls -l files/ && echo hello
 
       - name: Build packages
         run: |
