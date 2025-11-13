@@ -5,7 +5,11 @@ on:
 
 jobs:
   test:
-    name: Test setup-brioche
+    strategy:
+      matrix:
+        name: [a, b, c, d]
+        runs-on: [brioche-dev-builder-linux-aarch64]
+    name: Test setup-brioche [${{ matrix..name }}, ${{ matrix.runs-on }}]
     runs-on: brioche-dev-builder-linux-aarch64
     steps:
       - run: uname -a
