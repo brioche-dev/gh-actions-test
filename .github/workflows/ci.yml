@@ -9,6 +9,7 @@ jobs:
     runs-on: brioche-dev-builder-linux-aarch64
     steps:
       - run: uname -a
+      - run: sudo apt-get install -y xz-utils openssh-client
       - name: Setup Brioche
         uses: brioche-dev/setup-brioche@e14e8b60eaec3651837cdc6a6015c80c0cf45b33
         with:
