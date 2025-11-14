@@ -6,11 +6,13 @@ on:
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
-        name: [a, b, c, d]
+        name: [a]
         runs-on:
           - brioche-dev-builder-aarch64-linux
           - brioche-dev-builder-x86_64-linux
+          - brioche-dev-builder-runner-aarch64
     name: Test setup-brioche [${{ matrix.name }}, ${{ matrix.runs-on }}]
     runs-on: ${{ matrix.runs-on }}
     steps:
