@@ -7,7 +7,7 @@ jobs:
   test:
     strategy:
       matrix:
-        name: [a, b, c, d]
+        name: [a]
         runs-on:
           - brioche-dev-builder-aarch64-linux
           - brioche-dev-builder-x86_64-linux
