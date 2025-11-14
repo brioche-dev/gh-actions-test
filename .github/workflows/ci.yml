@@ -14,7 +14,7 @@ jobs:
     name: Test setup-brioche [${{ matrix.name }}, ${{ matrix.runs-on }}]
     runs-on: brioche-dev-builder-linux-aarch64
     steps:
-      - run: uname -a
+      - run: echo hi && uname -a
       - run: sudo apt-get update && sudo apt-get install -y xz-utils openssh-client
       - name: Setup Brioche
         uses: brioche-dev/setup-brioche@e14e8b60eaec3651837cdc6a6015c80c0cf45b33
