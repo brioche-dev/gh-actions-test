@@ -7,13 +7,12 @@ jobs:
   test:
     strategy:
       matrix:
-        name: [a]
+        name: [a, b, c, d]
         runs-on:
-          - test-runner-1
-          # - brioche-dev-builder-aarch64-linux
-          # - brioche-dev-builder-x86_64-linux
+          - brioche-dev-builder-aarch64-linux
+          - brioche-dev-builder-x86_64-linux
     name: Test setup-brioche [${{ matrix.name }}, ${{ matrix.runs-on }}]
-    runs-on: brioche-dev-builder-linux-aarch64
+    runs-on: ${{ matrix.runs-on }}
     steps:
       - run: echo hi && uname -a
       - run: sudo apt-get update && sudo apt-get install -y xz-utils openssh-client
