@@ -29,6 +29,8 @@ jobs:
           whereis brioche
           ls ~
           ls -lR ~/setup-brioche
+          git clone https://github.com/brioche-dev/brioche-packages.git
+          brioche run -p brioche-packages/examples/c_hello
 
           brioche --version
       - name: Sleep
