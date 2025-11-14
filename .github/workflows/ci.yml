@@ -8,7 +8,9 @@ jobs:
     strategy:
       matrix:
         name: [a, b, c, d]
-        runs-on: [brioche-dev-builder-linux-aarch64]
+        runs-on:
+          - brioche-dev-builder-aarch64-linux
+          - brioche-dev-builder-x86_64-linux
     name: Test setup-brioche [${{ matrix.name }}, ${{ matrix.runs-on }}]
     runs-on: brioche-dev-builder-linux-aarch64
     steps:
