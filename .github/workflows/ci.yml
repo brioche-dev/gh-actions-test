@@ -33,5 +33,3 @@ jobs:
           brioche run -p brioche-packages/examples/c_hello
 
           brioche --version
-      - name: Sleep
-        run: sleep 30
